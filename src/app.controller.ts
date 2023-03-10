@@ -1,6 +1,7 @@
 import { Controller, Get, HttpCode } from "@nestjs/common";
 import { AppService } from "./app.service";
 import { Commit } from "./models/commint/commint";
+import { Repository } from "./models/repository/repository";
 
 @Controller()
 export class AppController {
@@ -20,7 +21,17 @@ export class AppController {
    */
   @Get("getCommits")
   @HttpCode(200)
-  getBranches(): Promise<Commit[]> {
+  getCommits(): Promise<Commit[]> {
     return this.appService.getCommitsHistory();
+  }
+
+  /**
+   * @returns Promise<Branch[]>
+   * Here we are going to get the list of branches from the repository
+   */
+  @Get("getRepositories")
+  @HttpCode(200)
+  getBranches(): Repository[] {
+    return this.appService.getRepositories();
   }
 }
