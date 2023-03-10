@@ -8,6 +8,7 @@ import { ConfigService } from "@nestjs/config";
 
 //aour model data to return and get from GitHub API
 import { Commit } from "./models/commint/commint";
+import { Repository } from "./models/repository/repository";
 
 @Injectable()
 export class AppService {
@@ -45,4 +46,17 @@ export class AppService {
     );
     return commits;
   }
+
+  getRepositories(): Repository[] {
+    //n this case, we have a limited number of repositories, so we are going to return a static array, from model Repository
+    let repositories: Repository[] = [];
+    let repoBack: Repository = new Repository();
+    let repoFront: Repository = new Repository();
+    repoBack.name = "githubHistoryBackNest";
+    repoFront.name = "githubHistoryFrontAngular";
+    repositories.push(repoBack);
+    repositories.push(repoFront);
+    return repositories;
+  }
 }
+
