@@ -35,10 +35,17 @@ $ npm run start:dev
 
 ## Endpoints
 
-- Once you have run the proyect, you can aopen your browser, and access to the url: localhost:3000
+- Once you have run the proyect, you can aopen your browser, and access to the url: 
+```bash
+localhost:3000
+```
+
 - The endpind to get the list of commits of this repostory:
-  url: localhost:3000/getCommits
+```bash
+  Url: localhost:3000/getCommits
   Method: Get
+```
+
 
 ## License
 
