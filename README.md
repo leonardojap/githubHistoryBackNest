@@ -24,11 +24,21 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is a backend, with services thar provide dta from GitHub API, about the commits history in a proyect. [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository
+
+## Requirement to run
+- You must have intalled Node Js, 16.13.2 or higher
+- Install Cli of NestJs in your local machine:
+
+```bash
+$ npm i -g @nestjs/cli
+```
 
 ## Installation
 
 ```bash
+$ git clone https://github.com/leonardojap/githubHistoryBackNest.git
+$ cd githubHistoryBackNest/
 $ npm install
 ```
 
@@ -40,33 +50,7 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
