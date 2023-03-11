@@ -1,4 +1,4 @@
-import { Controller, Get, HttpCode } from "@nestjs/common";
+import { Controller, Get, HttpCode, Param } from "@nestjs/common";
 import { AppService } from "./app.service";
 import { Commit } from "./models/commint/commint";
 import { Repository } from "./models/repository/repository";
@@ -19,10 +19,10 @@ export class AppController {
    * @returns Promise<Commint[]>
    * Here we are going to get the list of conmits from the repository
    */
-  @Get("getCommits")
+  @Get("getCommits/:repository")
   @HttpCode(200)
-  getCommits(): Promise<Commit[]> {
-    return this.appService.getCommitsHistory();
+  getCommits(@Param("repository") repository): Promise<Commit[]> {
+    return this.appService.getCommitsHistory(repository);
   }
 
   /**

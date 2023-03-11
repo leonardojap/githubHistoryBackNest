@@ -22,7 +22,7 @@ export class AppService {
    * @returns Promise<Commint[]>
    * Here we are going to get the list of conmits from the repository at GitHub
    */
-  async getCommitsHistory(): Promise<Commit[]> {
+  async getCommitsHistory(repository: string): Promise<Commit[]> {
     let commits: Commit[] = []; //we are going to return this array
     await lastValueFrom(
       //http requets to get the commits from the repository at GitHub, with axios
@@ -30,7 +30,7 @@ export class AppService {
         .get(
           `${this.configService.get("GIT_BASE_URL")}${this.configService.get(
             "GIT_USER"
-          )}/${this.configService.get("GIT_REPO")}/commits`
+          )}/${repository}/commits`
         )
         .pipe(
           map(async (response) => {
@@ -59,4 +59,3 @@ export class AppService {
     return repositories;
   }
 }
-
